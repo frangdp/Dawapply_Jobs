@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a offer!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Name of offer </ion-label>
+    <ion-input [(ngModel)]="name_oferta"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="description_oferta"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label>Range of salary</ion-label>
+    <ion-select [(ngModel)]="range_salary" interface="popover" >
+      <ion-select-option value='null'></ion-select-option>
+      <ion-select-option value='500-1000'>500-1000</ion-select-option>
+    
+      <ion-select-option value='1000-1500'>1000-1500</ion-select-option>
+      <ion-select-option value='1500-2000'>1500-2000</ion-select-option>
+      <ion-select-option value='2000-2500'>2000-2500</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  
+  <ion-item>
+    <ion-label>Location</ion-label>
+    <ion-select [(ngModel)]="district_oferta"  interface="popover" >
+      <ion-select-option *ngFor="let i of district_array" value="{{i}}">{{i}}</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+
+  
+
+  <ion-button (click)="OncClickAdd()" color="primary">Add</ion-button>
+  
+
+  <ion-item>
+    <ion-label>Are you at location of offer?</ion-label>
+    <ion-toggle [(ngModel)]="input_ubicacion" slot="start" name="cherry" color="danger"></ion-toggle>
+  </ion-item>
+  <div  id="map"> </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+        Dawapply 
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+      <ion-thumbnail slot="start">
+          <ion-img class="img position_center" src="../assets/dawapply.png"></ion-img>
+      </ion-thumbnail>
+      <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email"   [(ngModel)]="user_email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type=password [(ngModel)]="user_password"></ion-input>
+      </ion-item>
+      <ion-button class="margin_top_10px" expand="block"  color="primary" (click)="onLogin()">Login</ion-button>
+      <ion-button class="margin_top_10px" expand="block" color="primary" href="/register">Register</ion-button>
+      
+  </div>
+</ion-content>

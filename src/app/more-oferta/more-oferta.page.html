@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Offer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1>{{oferta.name}}</h1>
+  <h4>District: {{oferta.district}}</h4>
+  <h4>Description: {{oferta.description}}</h4>
+  <h4>Salary: {{oferta.salary}}</h4>
+
+  <div *ngIf="mostrar_mapa" id="map"> </div>
+
+</ion-content>

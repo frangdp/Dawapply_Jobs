@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Welcome!!!
+    </ion-title>
+    <ion-button slot="end" size="large" (click)="onLogout()">Logout</ion-button>
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="search_function()" [(ngModel)]="search" placeholder="Filter offer"></ion-searchbar>
+  <ion-item>
+    <ion-label>Filtro</ion-label>
+    <ion-select [(ngModel)]="district_filter"  (ionChange)="filtro_distrito()" interface="popover" >
+      <ion-select-option *ngFor="let i of district_array" value="{{i}}">{{i}}</ion-select-option>
+     
+    </ion-select>
+
+    <ion-select [(ngModel)]="price_filter"  (ionChange)="filtro_array()" interface="popover" >
+      <ion-select-option *ngFor="let i of price_array" value="{{i}}">{{i}}</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-sliding button  (click)='presentActionSheet(y)' *ngFor="let y of ofertas_array ">
+    <ion-item>
+      <h2 slot="start">{{y.name}}</h2>
+      
+            <p slot="end">{{y.district}}</p>
+    </ion-item>
+   
+
+  </ion-item-sliding>
+
+
+  <!-- <ion-button size="large" (click)="onLogout()">Logout</ion-button> -->
+  <!-- <ion-button siza="large" routerLink="/admin">Admin</ion-button> -->
+
+ <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="OnClickAdd()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>
