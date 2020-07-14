@@ -21,6 +21,18 @@
             <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
+        <ion-item>
+            <ion-label>Are you admin?</ion-label>
+            <ion-toggle (ionChange)="cambio()"  [(ngModel)]="input_ubicacion" slot="start" name="cherry" color="danger"></ion-toggle>
+          </ion-item>
+
+    <ion-item class="xuso" *ngIf="valor==true">
+            <ion-label *ngIf="valor==true" position="floating">SuperPassword</ion-label>
+            <ion-input  *ngIf="valor==true" type="password" class="password2"></ion-input>
+        </ion-item>
+      
+
+    
         <ion-button class="margin_top_10px" expand="block"  color="primary" (click)="onRegister()">Register</ion-button>
         <!-- <ion-button size="large" routerLink="/login">Login</ion-button> -->
 </div>
